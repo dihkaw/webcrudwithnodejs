@@ -13,18 +13,26 @@ apt-get install git nodejs -y
 
 ## Buat file .env
 ```bash
-DB_HOST=database-1.cluster-chmgmmmlhntb.us-east-1.rds.amazonaws.com
-DB_USER=admin
-DB_PASSWORD=123456
-DB_NAME=dbbarang
+DB_HOST=url/ip
+DB_USER=username
+DB_PASSWORD=password
+DB_NAME=database
 DB_PORT=3306
 ```
 
-##
+## Menginstall 
+```bash
+npm install
+npm install --prefix
+```
 
 
-##
+## Menjalankan aplikasi
+```bash
+node index.js
+```
 
-
-##
-
+## Alternatif
+```bash
+npm install pm2 -g && npm start index.js --name "Website CRUD with Node js"
+```
