@@ -18,9 +18,9 @@ NODE_ENV = production
 
 ## Config Database
 1. Buat cluster database menggunakan RDS dari Amazon Aurora MySQL atau MySQL
-2. Akses cluster database tersebut menggunakan tambahan software seperti HeidiSQL
+2. Akses cluster database tersebut menggunakan tambahan software seperti [**HeidiSQL**](https://www.heidisql.com/download.php)
 3. Buat database dengan nama "barang"
-4. Buat table menggunakan perintah berikut 
+4. Buat tabel menggunakan perintah berikut ini :
 ```javascript
 CREATE TABLE IF NOT EXISTS `product` (
 `product_id` int(11) NOT NULL AUTO_INCREMENT,
