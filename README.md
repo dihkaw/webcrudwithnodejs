@@ -1,38 +1,34 @@
-# Website CRUD with Node js
-Aplikasi web sederhana yang mendemonstrasikan fitur CRUD (Create, Read, Update, Delete) menggunakan Node.js. Aplikasi ini dirancang untuk membantu pengembang memahami cara membangun aplikasi web dinamis dengan Node.js dan teknologi pendukung lainnya.
+# Langkah Deploy nodejs di Amazon Web Service
+## Install Dependency
+* >npm install --prefix
+## Config Environment
+1. Buat file .env pada folder aplikasi
+2. Tambahkan kebutuhan untuk mengkoneksikan database seperti hostname, user, password, dan nama database seperti berikut :
+ * >DB_HOST = YOUR ENDPOINT
+ * >DB_USER = YOUR USERNAME
+ * >DB_PASSWORD = YOUR PASSWORD
+ * >DB_DATABASE = YOUR DATABASE
+ * >NODE_ENV = production
+## Config Database
+1. Buat cluster database menggunakan RDS dari Amazon Aurora MySQL atau MySQL
+2. Akses cluster database tersebut menggunakan tambahan software seperti HeidiSQL
+3. Buat database dengan nama "barang"
+4. Buat table menggunakan perintah berikut 
+   * > CREATE TABLE IF NOT EXISTS `product` (
+   * > `product_id` int(11) NOT NULL AUTO_INCREMENT,
+   * > `product_name` varchar(200) DEFAULT NULL,
+   * > `product_price` int(11) DEFAULT NULL,
+   * > PRIMARY KEY (`product_id`)
+   * > ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
-## Install di Amazon Linux/RedHat
-```bash
-yum install git nodejs -y
-```
-
-## Install di Debian/Ubuntu
-```bash
-apt-get install git nodejs -y
-```
-
-## Buat file .env
-```bash
-DB_HOST=url/ip
-DB_USER=username
-DB_PASSWORD=password
-DB_NAME=database
-DB_PORT=3306
-```
-
-## Menginstall 
-```bash
-npm install
-npm install --prefix
-```
-
-
-## Menjalankan aplikasi
-```bash
-node index.js
-```
-
-## Alternatif
-```bash
-npm install pm2 -g && npm start index.js --name "Website CRUD with Node js"
-```
+5. Tambahkan data pada tabel product dengan perintah berikut :
+  * > INSERT INTO `product` (`product_id`, `product_name`, `product_price`) VALUES
+  * > (1, 'Product 1', 2000),
+  * > (2, 'Product 2', 2000),
+  * > (3, 'Product 3', 3000),
+  * > (4, 'Product 4', 2000),
+  * > (5, 'Product 5', 1500); 
+## Untuk menjalankan program
+* >npm run start-prod
+## Test Program
+* >buka browser dan masukan ip anda dan portnya seperti berikut: localhost:8000
