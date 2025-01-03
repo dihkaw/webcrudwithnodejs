@@ -3,6 +3,7 @@
 ## Install Dependency
 ```bash
 npm install --prefix
+npm install -g pm2
 ```
 
 ## Config Environment
